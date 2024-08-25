@@ -6,9 +6,16 @@ const routerLogin = require("./src/api/routes/login.routes")
 const env = require("dotenv")
 env.config()
 
+const cloudinary = require("cloudinary").v2
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
+})
+
 connectDB();
 const server = express();
-const PORT = 3400; // usamos la variable de entorno PORT
+const PORT = 3000; // usamos la variable de entorno PORT
 
 server.use(express.json())
 server.use("/", router)

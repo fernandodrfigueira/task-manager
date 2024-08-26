@@ -10,12 +10,12 @@ const getTasks = async (req, res) => {
         console.log(error)
     }
 }
-//buscar una tarea por nombre /getByName/:name
-const getTaskByTitle = async (req, res) => {
-    const { title } = req.params;
-    const taskByTitle = await Task.find({ title: title })
 
-    res.json(taskByTitle)
+const getTaskById = async (req, res) => {
+    const { taskId } = req.params;
+    const taskById = await Task.findById(taskId);
+
+    res.json(taskById)
 }
 // añadir una nueva tarea
 const add = async (req, res) => {
@@ -83,4 +83,4 @@ const toggleStatus = async (req, res) => {
 }
 
 
-module.exports = { getTasks, getTaskByTitle, add, deleteTask, updateTask, toggleStatus }
+module.exports = { getTasks, getTaskById, add, getTaskById, deleteTask, updateTask, toggleStatus }

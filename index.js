@@ -4,6 +4,7 @@ const router = require("./src/api/routes/task.routes")
 const routerUser = require("./src/api/routes/user.routes")
 const routerLogin = require("./src/api/routes/login.routes")
 const env = require("dotenv")
+const cors = require('cors')
 env.config()
 
 const cloudinary = require("cloudinary").v2
@@ -17,6 +18,7 @@ connectDB();
 const server = express();
 const PORT = 3000; // usamos la variable de entorno PORT
 
+server.use(cors())
 server.use(express.json())
 server.use("/", router)
 server.use("/user", routerUser)

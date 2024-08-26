@@ -25,7 +25,7 @@ const isAdmin = async (req, res, next) => {
     const user = await User.findById(id);
     console.log(id);
     console.log(user.role);
-    if (user.role !== "admin"){
+    if (user.role !== "Admin"){
         return res.status(403).send("Not enough permissions");
     }
     next();

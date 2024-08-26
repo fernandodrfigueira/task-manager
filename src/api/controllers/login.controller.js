@@ -23,6 +23,7 @@ const login = async (req, res) => {
     }
     if (user.password == password) {
         const token = jwt.sign({id:user._id}, process.env.JWT_SECRET)
+        console.log("jwt creado" + token)
         res.status(200).json({ token, user })
     }
     else {

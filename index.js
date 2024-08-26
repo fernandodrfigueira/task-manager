@@ -16,7 +16,7 @@ cloudinary.config({
 
 connectDB();
 const server = express();
-const PORT = 3000; // usamos la variable de entorno PORT
+const PORT = 3000; 
 
 server.use(cors())
 server.use(express.json())
@@ -29,7 +29,3 @@ server.listen(PORT, () => {
     console.log(`listen port http://localhost:${PORT} `)
 })
 
-// modelos --> estructuras de BD (colecciones),
-// vistas, --> routes
-// controladores--> funcionalidad para acceder a la BD
-//utils--> funciones de validaciones, conexion de BD, middleware

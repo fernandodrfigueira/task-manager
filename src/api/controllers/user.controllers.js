@@ -53,15 +53,13 @@ const deleteUser = async (req, res) => {
 
 const deleteTaskUser = async (req, res) => {
     const { idT, idU } = req.query;
-    //encontrar el usuario y modificarlo
-    //$pull --> elimina del array
+
     const updatedUser = await User.findByIdAndUpdate(
         idU,
-        { $pull: { task: idT } }, // $pull permite eliminar un elemnto del array
+        { $pull: { task: idT } }, 
         { new: true }
     )
     return res.json({ data: updatedUser })
-    // buscar al usuario, sacar el elemento del array (filter, splice, slice), guardar los datos del usuario save()
 }
 
 module.exports = { addUser, addTaskToUser, getUserById, deleteUser, deleteTaskUser }

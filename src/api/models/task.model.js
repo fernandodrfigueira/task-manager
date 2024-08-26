@@ -9,6 +9,5 @@ const taskSchema = new Schema({
 }, {
     collection: "task"
 })
-//String, number, array, date, boolean, ObjectId
 const Task = mongoose.model("task", taskSchema)
 module.exports = Task;

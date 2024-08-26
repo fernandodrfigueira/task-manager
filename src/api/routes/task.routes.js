@@ -8,7 +8,6 @@ router.get("/getById/:taskId", verifyToken, getTaskById);
 router.post("/addTask", verifyToken, isAdmin, add);
 router.delete("/delete/:id", verifyToken, isAdmin, deleteTask);
 
-//el id lo vamos a enviar a traves de los query
 router.put("/updateTask", verifyToken, isAdmin, updateTask);
 router.put("/toggleTaskStatus", verifyToken, toggleStatus)
 

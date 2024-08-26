@@ -8,12 +8,11 @@ const userSchema = new Schema({
     profilepic: {type: String, require: false},
     position: { type: String },
     role: { type: String, require: true, enum: ["admin", "usuario"], default: "usuario" },
-    //date: { type: Date, default: Date.now() },
     task: [{ type: Schema.Types.ObjectId, ref: "task" }]
 },
     {
         collection: "user",
-        timestamps: true // createdAt, updatedAt 
+        timestamps: true 
     })
 const User = mongoose.model("user", userSchema)
 module.exports = User;

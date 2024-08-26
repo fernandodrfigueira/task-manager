@@ -17,13 +17,12 @@ const getTaskById = async (req, res) => {
 
     res.json(taskById)
 }
-// añadir una nueva tarea
+
 const add = async (req, res) => {
     try {
         const newTask = req.body;
         const findTask = await Task.find({ title: newTask.title })
         if (findTask.length === 0) {
-            // si la tarea no está en la BD
             const task = new Task(newTask)
             const createdTask = await task.save()
             res.status(201).json(createdTask)
@@ -53,12 +52,15 @@ const updateTask = async (req, res) => {
     try {
         const { id } = req.query;
         const taskBody = req.body;
+        console.log(req.query)
+        console.log(taskBody)
         const updateTask = await Task.findByIdAndUpdate(id, taskBody, { new: true })
 
         if (!updateTask) {
             res.json({ success: false, message: "el id no existe" })
         } else {
             res.json(updateTask)
+            console.log(updateTask)
         }
     } catch (error) {
         console.log(error)

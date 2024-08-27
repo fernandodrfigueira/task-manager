@@ -10,7 +10,7 @@ El desarrollo a nivel de backend debe cumplir con los siguientes requisitos mín
 
 4. Desplegar el proyecto en algún servidor.
 
-5. Crpar por lo menos dos rutas privadas para gestión de usuarios.
+5. Crear por lo menos dos rutas privadas para gestión de usuarios.
 
 El proyecto está ubicado en un servidor de Render:
 https://taskmanager-0ktf.onrender.com

@@ -14,7 +14,6 @@ const getTasks = async (req, res) => {
 const getTaskById = async (req, res) => {
     const { taskId } = req.params;
     const taskById = await Task.findById(taskId);
-
     res.json(taskById)
 }
 
